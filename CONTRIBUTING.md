@@ -1,28 +1,26 @@
 # 贡献指南
 
-感谢你对 CookLikeHOC 项目的兴趣！
+感谢你对 CookLikeHOC 的兴趣与贡献。
 
 ## 项目简介
 
-CookLikeHOC 是一个基于《老乡鸡菜品溯源报告》整理的菜谱网站，使用 VitePress 构建。
+CookLikeHOC 是基于《老乡鸡菜品溯源报告》整理的菜谱站点，使用 **VitePress** 构建，按烹饪方式分类（炒菜、炖菜、蒸菜、卤菜、砂锅、汤品等）。
 
 ## 如何贡献
 
 ### 报告问题
 
-如果你发现内容错误或有改进建议：
+发现内容错误或想提改进建议时：
 
-1. 查看 [现有 Issues](https://github.com/AlexanderJ-Carter/CookLikeHOC/issues) 确认问题未被报告
-2. 创建新 Issue，描述问题和建议
+1. 先查看 [现有 Issues](https://github.com/AlexanderJ-Carter/CookLikeHOC/issues)，避免重复
+2. 新建 Issue，简要描述问题与建议
 
-### 提交改进
+### 提交修改
 
 1. Fork 本仓库
-2. 创建功能分支：`git checkout -b feature/your-feature`
-3. 进行修改
-4. 提交：`git commit -m 'feat: your feature'`
-5. 推送：`git push origin feature/your-feature`
-6. 创建 Pull Request
+2. 创建分支：`git checkout -b feature/你的功能名`
+3. 修改后提交：`git commit -m 'feat: 简短描述'`
+4. 推送并创建 Pull Request：`git push origin feature/你的功能名`
 
 ## 本地开发
 
@@ -34,39 +32,26 @@ CookLikeHOC 是一个基于《老乡鸡菜品溯源报告》整理的菜谱网�
 ### 快速开始
 
 ```bash
-# 克隆仓库
 git clone https://github.com/AlexanderJ-Carter/CookLikeHOC.git
 cd CookLikeHOC
 
-# 安装依赖
 npm install
-
-# 启动开发服务器
-npm run docs:dev
-
-# 构建生产版本
-npm run docs:build
+npm run docs:dev    # 开发：会先生成目录索引，再启动 VitePress（默认 http://localhost:5173）
+npm run docs:build  # 构建生产版本
 ```
+
+更多说明见 [本地开发文档](./docs/development.md)。
 
 ## 目录结构
 
 ```
 CookLikeHOC/
-├── .vitepress/          # VitePress 配置
-├── 炒菜/                 # 炒菜菜谱
-├── 炖菜/                 # 炖菜菜谱
-├── 卤菜/                 # 卤菜菜谱
-├── 凉拌/                 # 凉菜菜谱
-├── 砂锅菜/              # 砂锅菜谱
-├── 汤/                   # 汤类
-├── 早餐/                 # 早餐
-├── 主食/                 # 主食
-├── 饮品/                 # 饮品
-└── ...
+├── .vitepress/     # VitePress 配置与主题
+├── 炒菜/ 炖菜/ 蒸菜/ 卤菜/ 凉拌/ 砂锅菜/ 汤/ 烫菜/ 煮锅/ 烤类/ 炸品/ 饮品/ 配料/ 等
+├── docs/           # 项目文档（如 development.md）
+└── docker_support/ # Docker 相关
 ```
 
 ## 许可证
 
-本项目采用 MIT 许可证。贡献的代码将按照相同许可证发布。
-
-内容版权归原作者所有。
+本项目采用 MIT 许可证。贡献内容按相同许可证发布。菜谱内容版权归属见仓库说明。

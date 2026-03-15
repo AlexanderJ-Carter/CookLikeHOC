@@ -32,7 +32,7 @@ export function generateNavAndSidebar(rootDir) {
 
   for (const dir of sections) {
     const abs = path.join(rootDir, dir)
-  const readme = ['README.md', 'readme.md', 'index.md'].find((n) => fs.existsSync(path.join(abs, n)))
+    const readme = ['README.md', 'readme.md', 'index.md'].find((n) => fs.existsSync(path.join(abs, n)))
     const files = fs
       .readdirSync(abs)
       .filter((f) => isMarkdown(path.join(abs, f)))
@@ -44,17 +44,17 @@ export function generateNavAndSidebar(rootDir) {
     }))
 
     if (items.length > 0) {
+      const readmeURI = readme ? `/${encodeURI(dir)}/${encodeURI(readme)}` : null
+      const sectionLink = readmeURI || items[0].link
+      const sectionItems = readmeURI ? items.filter((i) => i.link !== readmeURI) : items.slice(1)
       sidebar[`/${dir}/`] = [
         {
           text: dir,
-          items,
+          link: sectionLink,
+          items: sectionItems,
         },
       ]
-      if (readme) {
-        nav.push({ text: dir, link: `/${encodeURI(dir)}/${encodeURI(readme)}` })
-      } else {
-        nav.push({ text: dir, link: items[0].link })
-      }
+      nav.push({ text: dir, link: sectionLink })
     } else {
       nav.push({ text: dir, link: `/${encodeURI(dir)}/` })
     }

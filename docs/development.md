@@ -1,67 +1,45 @@
 # 本地开发
 
-### 前置依赖
+本文档说明如何在本地运行与构建 CookLikeHOC 站点。
 
-在开始之前，请确保你的开发环境中安装了 [Node.js](https://nodejs.org/) (推荐 v18.x 或更高版本)。
+## 环境要求
 
-- **Windows:**
+- [Node.js](https://nodejs.org/) **v18.x 或更高**
+- npm（随 Node 安装）
 
-  可以从 [Node.js 官网](https://nodejs.org/en/download/) 下载安装包进行安装。
-  或者使用包管理器 [Chocolatey](https://chocolatey.org/):
-  ```bash
-  choco install nodejs
-  ```
+### 安装 Node.js
 
-- **macOS:**
+| 系统 | 方式 |
+|------|------|
+| **Windows** | [官网下载](https://nodejs.org/en/download/) 或 `choco install nodejs` |
+| **macOS** | [官网下载](https://nodejs.org/en/download/) 或 `brew install node` |
+| **Linux (Debian/Ubuntu)** | `curl -fsSL https://deb.nodesource.com/setup_18.x \| sudo -E bash -` 后 `sudo apt-get install -y nodejs` |
+| **Linux (RHEL/CentOS)** | `curl -fsSL https://rpm.nodesource.com/setup_18.x \| sudo bash -` 后 `sudo yum install -y nodejs` |
 
-  可以从 [Node.js 官网](https://nodejs.org/en/download/) 下载安装包进行安装。
-  或者使用包管理器 [Homebrew](https://brew.sh/):
-  ```bash
-  brew install node
-  ```
+## 启动步骤
 
-- **Linux:**
-
-  对于 Debian/Ubuntu 系统，可以使用 [NodeSource](https://github.com/nodesource/distributions) 来安装:
-  ```bash
-  curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-  sudo apt-get install -y nodejs
-  ```
-
-  对于 RHEL/CentOS 系统:
-  ```bash
-  curl -fsSL https://rpm.nodesource.com/setup_18.x | sudo bash -
-  sudo yum install -y nodejs
-  ```
-
-### 启动项目
-
-1. 克隆代码仓库
+1. **克隆仓库**
 
    ```bash
    git clone https://github.com/Gar-b-age/CookLikeHOC.git
-   ```
-
-2. 进入项目目录
-
-   ```bash
    cd CookLikeHOC
    ```
 
-3. 安装依赖
+2. **安装依赖并启动**
 
    ```bash
    npm install
-   ```
-
-4. 运行
-
-   ```bash
    npm run docs:dev
    ```
 
-   然后打开浏览器，访问 
-   ```
-   http://localhost:5173/ 
-   ```
-   即可。
+   `docs:dev` 会先执行 `prebuild:indexes`（生成各分类下的 README 索引），再启动 VitePress 开发服务器。
+
+3. **在浏览器中打开** [http://localhost:5173](http://localhost:5173) 即可预览。
+
+## 常用命令
+
+| 命令 | 说明 |
+|------|------|
+| `npm run docs:dev` | 开发模式（热更新） |
+| `npm run docs:build` | 生产构建（输出到 `.vitepress/dist`） |
+| `npm run docs:preview` | 本地预览构建后的静态站点 |

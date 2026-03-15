@@ -2,15 +2,14 @@
 
 本仓库是 [Gar-b-age/CookLikeHOC](https://github.com/Gar-b-age/CookLikeHOC) 的个人 fork。
 
-## 主要改动
+## 相对上游的改动
 
-- 添加了 GitHub Actions CI/CD 配置
-- 添加了 GitHub Pages 自动部署
-- 添加了 Docker 构建支持
-- 添加了 LICENSE、SECURITY.md、CONTRIBUTING.md 等文档
-- 更新了 package.json 配置
+- GitHub Actions：CI 构建、GitHub Pages 自动部署
+- Docker：多阶段构建与 nginx 运行
+- 文档：LICENSE、SECURITY.md、CONTRIBUTING.md、FORK_INFO.md
+- 工程：package.json 脚本与 VitePress 配置优化
 
-## 如何同步上游
+## 同步上游
 
 ```bash
 # 添加上游仓库
@@ -23,9 +22,10 @@ git fetch upstream
 git merge upstream/main
 ```
 
-## Docker 镜像
+## Docker 构建与镜像
 
-本 fork 的 Docker 镜像发布在：
+- **构建**：在仓库根目录执行 `docker build -t cooklikehoc:latest .`（使用根目录 [Dockerfile](./Dockerfile)）。
+- **镜像**：本 fork 的镜像可发布至 GitHub Container Registry，例如：
 
 ```bash
 docker pull ghcr.io/alexanderj-carter/cooklikehoc:latest

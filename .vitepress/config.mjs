@@ -12,6 +12,10 @@ export default defineConfig({
   base: '/CookLikeHOC/',
   ignoreDeadLinks: true,
   srcExclude: ['**/README.md'],
+  head: [
+    ['meta', { name: 'theme-color', content: '#e85d2c' }],
+    ['meta', { name: 'description', content: '像老乡鸡那样做饭 - 基于《老乡鸡菜品溯源报告》整理的菜谱' }],
+  ],
   themeConfig: {
     logo: '/logo.png',
     nav: [
