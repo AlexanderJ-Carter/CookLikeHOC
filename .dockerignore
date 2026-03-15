@@ -1,0 +1,13 @@
+node_modules
+.vitepress/dist
+.vitepress/cache
+.git
+.github
+.docker_support
+docs
+*.md
+!README.md
+.env*
+*.log
+.DS_Store
+Thumbs.db
