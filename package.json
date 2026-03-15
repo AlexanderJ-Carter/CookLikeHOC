@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "像老乡鸡那样做饭 - 基于《老乡鸡菜品溯源报告》整理的菜谱网站",
+  "description": "像老乡鸡那样做饭（Fork）- 基于《老乡鸡菜品溯源报告》整理的菜谱，含手绘流程图",
   "author": "AlexanderJ-Carter",
   "license": "MIT",
   "repository": {

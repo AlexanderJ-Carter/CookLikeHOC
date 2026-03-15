@@ -1,6 +1,6 @@
-# ============================
-# Build Stage
-# ============================
+# CookLikeHOC (Fork) - 多阶段构建：Node 构建 VitePress 站点 + nginx 运行
+# 上游：Gar-b-age/CookLikeHOC
+
 FROM node:22-alpine AS builder
 
 WORKDIR /app
@@ -11,13 +11,10 @@ RUN npm ci --prefer-offline --no-audit
 COPY . .
 RUN npm run build
 
-# ============================
-# Runtime Stage
-# ============================
 FROM nginx:alpine
 
 LABEL org.opencontainers.image.source="https://github.com/AlexanderJ-Carter/CookLikeHOC"
-LABEL org.opencontainers.image.description="CookLikeHOC - 像老乡鸡那样做饭"
+LABEL org.opencontainers.image.description="CookLikeHOC (fork) - 像老乡鸡那样做饭"
 LABEL org.opencontainers.image.authors="AlexanderJ-Carter"
 
 COPY --from=builder /app/.vitepress/dist /usr/share/nginx/html

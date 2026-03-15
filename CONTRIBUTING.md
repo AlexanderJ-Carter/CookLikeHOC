@@ -1,6 +1,8 @@
 # 贡献指南
 
-感谢你对 CookLikeHOC 的兴趣与贡献。
+感谢你对本仓库的兴趣与贡献。
+
+本仓库为 [Gar-b-age/CookLikeHOC](https://github.com/Gar-b-age/CookLikeHOC) 的 fork；欢迎在本 fork 提交 PR，也可直接向上游贡献。
 
 ## 项目简介
 
